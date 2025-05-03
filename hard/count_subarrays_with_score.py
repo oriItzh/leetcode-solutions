@@ -42,17 +42,14 @@ class Solution:
 """
         n = len(nums)
         numSubarrays = n * (n + 1) // 2
-        l = r = 0
-        curSum = nums[0]
-        while r < len(nums):
-            if (r - l + 1) * curSum >= k:
+        l = 0
+        curSum = 0
+        for r in range(n):
+            curSum += nums[r]
+            while (r - l + 1) * curSum >= k:
                 numSubarrays -= (n - r)
                 curSum -= nums[l]
                 l += 1
-            else:
-                r += 1
-                if r < len(nums):
-                    curSum += nums[r]
 
         return numSubarrays
         
