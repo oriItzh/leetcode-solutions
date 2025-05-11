@@ -29,8 +29,8 @@ class Solution:
         1 <= nums1.length, nums2.length <= 105
         0 <= nums1[i], nums2[i] <= 106
         """
-        sum1, zero1 = sum(num for num in nums1 if num != 0), nums1.count(0)
-        sum2, zero2 = sum(num for num in nums2 if num != 0), nums2.count(0)
+        sum1, zero1 = sum(nums1), nums1.count(0)
+        sum2, zero2 = sum(nums2), nums2.count(0)
 
         # If both arrays have zeros, we can balance both by filling minimum 1s
         if zero1 > 0 and zero2 > 0:
