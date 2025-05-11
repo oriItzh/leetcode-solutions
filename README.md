@@ -1,12 +1,13 @@
 # LeetCode Solutions
 
-This repository contains my solutions to LeetCode problems, categorized by difficulty (Easy, Medium, Hard). Each solution is implemented in Python.
+This repository contains my solutions to the daily and favorite LeetCode problems, categorized by difficulty (Easy, Medium, Hard).
+The solutions are implemented in Python.
 
 ## Structure
 
-- `easy/` – Easy-level problems
-- `medium/` – Medium-level problems
-- `hard/` – Hard-level problems
+- `easy/` â€“ Easy-level problems
+- `medium/` â€“ Medium-level problems
+- `hard/` â€“ Hard-level problems
 - Each file is named after the problem (e.g., `two_sum.py`)
 
 ## Example
@@ -23,4 +24,4 @@ python easy/two_sum.py
 
 ## License
 
-MIT – feel free to use any code here.
+MIT â€“ feel free to use any code here.
