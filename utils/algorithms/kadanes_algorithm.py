@@ -9,8 +9,8 @@ def find_max_subarray_sum(nums: list[int]):
     Returns:
         int: Maximum subarray sum.
     """
-    max_sum = float('-inf') # Initialize to negative infinity to handle all negative numbers    
-    current_sum = 0 if not nums else nums[0] # Start with the first element or 0 if the list is empty
+    max_sum = nums[0] if not nums else float('-inf') # Initialize to negative infinity to handle all negative numbers
+    current_sum = 0 # Start with the first element or 0 if the list is empty
     for num in nums:
         current_sum = max(current_sum, 0) + num
         max_sum = max(max_sum, current_sum)
