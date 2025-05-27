@@ -12,7 +12,7 @@ def find_max_subarray_sum(nums: list[int]):
     max_sum = nums[0] if not nums else float('-inf') # Initialize to negative infinity to handle all negative numbers
     current_sum = 0 # Start with the first element or 0 if the list is empty
     for num in nums:
-        current_sum = max(current_sum, 0) + num
+        current_sum = max(current_sum + num, num) 
         max_sum = max(max_sum, current_sum)
 
     return max_sum
@@ -38,5 +38,6 @@ def find_max_subarray_sum_with_indices(nums: list[int]):
         current_sum += nums[end]
         if current_sum > max_sum:
             max_start, max_end = start, end
+            max_sum = current_sum
 
     return max_sum, max_start, max_end
