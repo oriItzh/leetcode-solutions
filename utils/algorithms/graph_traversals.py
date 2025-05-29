@@ -1,6 +1,7 @@
 from collections import deque
 from typing import List, Any, Dict
 
+
 class GraphTraversal:
     def __init__(self, graph: Dict[Any, List[Any]]):
         """
