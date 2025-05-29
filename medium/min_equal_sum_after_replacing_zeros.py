@@ -22,7 +22,7 @@ class Solution:
         Input: nums1 = [2,0,2,0], nums2 = [1,4]
         Output: -1
         Explanation: It is impossible to make the sum of both arrays equal.
-        
+
 
         Constraints:
 
@@ -36,10 +36,10 @@ class Solution:
         if zero1 > 0 and zero2 > 0:
             min_total = max(sum1 + zero1, sum2 + zero2)
             return min_total
-        
+
         # If only nums1 has zeros
         if zero1 > 0:
-            # We must be able to fill zero1 slots in nums1 with strictly positive ints (>=1) 
+            # We must be able to fill zero1 slots in nums1 with strictly positive ints (>=1)
             # such that total equals sum2
             min_needed = sum2 - sum1
             if min_needed >= zero1:

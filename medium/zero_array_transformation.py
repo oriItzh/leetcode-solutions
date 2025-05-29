@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def isZeroArray(self, nums: List[int], queries: List[List[int]]) -> bool:
         """
@@ -29,9 +30,6 @@ class Solution:
         return all(nums[i] <= max_ops[i] for i in range(N))
 
 
-
-        
-
 #         Example 1:
 
 #         Input: nums = [1,0,1], queries = [[0,2]]
@@ -57,7 +55,7 @@ class Solution:
 #         For i = 1:
 #         Select the subset of indices as [0, 1, 2] and decrement the values at these indices by 1.
 #         The array will become [3, 1, 0, 0], which is not a Zero Array.
-        
+
 
 #         Constraints:
 

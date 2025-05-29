@@ -27,7 +27,7 @@ class Solution:
             for j in reversed(range(N)):
                 if i == M - 1 and j == N - 1:
                     continue
-                right = grid[i][j + 1] if j + 1 < N else float('inf')
-                down = grid[i + 1][j] if i + 1 < M else float('inf')
+                right = grid[i][j + 1] if j + 1 < N else float("inf")
+                down = grid[i + 1][j] if i + 1 < M else float("inf")
                 grid[i][j] += min(right, down)
         return grid[0][0]

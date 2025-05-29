@@ -1,9 +1,12 @@
 from collections import defaultdict, deque
 from typing import List
 
+
 class Solution:
-    def maxTargetNodes(self, edges1: List[List[int]], edges2: List[List[int]]) -> List[int]:
-        """ 
+    def maxTargetNodes(
+        self, edges1: List[List[int]], edges2: List[List[int]]
+    ) -> List[int]:
+        """
         Problem: Maximize the number of target nodes after connecting trees 2; leetcode #3373
 
         There exist two undirected trees with n and m nodes, labeled from [0, n - 1] and [0, m - 1], respectively.
@@ -41,12 +44,16 @@ class Solution:
                     for nei in adj[cur]:
                         q.append(nei)
                 is_even = not is_even
-            return res         
+            return res
 
         # Build adjacency lists and find roots for both trees
-        (adj1, root1), (adj2, root2) = build_adj_list(edges1, N), build_adj_list(edges2, M)
+        (adj1, root1), (adj2, root2) = build_adj_list(edges1, N), build_adj_list(
+            edges2, M
+        )
         # Get parity (even/odd) for all nodes in both trees
-        even_from_root1, even_from_root2 = even_steps_from_root(adj1, N, root1), even_steps_from_root(adj2, M, root2)
+        even_from_root1, even_from_root2 = even_steps_from_root(
+            adj1, N, root1
+        ), even_steps_from_root(adj2, M, root2)
         # Count number of even nodes in tree2
         evens_from_root2 = even_from_root2.count(True)
         # The best you can do in tree2 is to connect to a node that maximizes the number of even or odd nodes
@@ -57,8 +64,16 @@ class Solution:
 
         # For each node in tree1, if it's even, its targets are all even nodes in tree1 plus max_targets2 from tree2
         # If it's odd, its targets are all odd nodes in tree1 plus max_targets2 from tree2
-        return [num_evens1 + max_targets2 if even_from_root1[i] else num_odds1 + max_targets2 for i in range(N)]
-    
+        return [
+            (
+                num_evens1 + max_targets2
+                if even_from_root1[i]
+                else num_odds1 + max_targets2
+            )
+            for i in range(N)
+        ]
+
+
 # Time Complexity Analysis:
 # Let n = number of nodes in tree1, m = number of nodes in tree2.
 # - build_adj_list: O(n) and O(m) for each tree.

@@ -2,7 +2,7 @@ class Solution:
     def pushDominoes(self, dominoes: str) -> str:
         """
         Problem: Push Dominoes; leetcode #838
-        
+
         There are n dominoes in a line, and we place each domino vertically upright.
         In the beginning, we simultaneously push some of the dominoes either to the left or to the right.
         After each second, each domino that is falling to the left pushes the adjacent domino on the left.
@@ -17,7 +17,7 @@ class Solution:
         dominoes[i] = '.', if the ith domino has not been pushed.
         Return a string representing the final state.
 
-        
+
 
         Example 1:
 
@@ -28,12 +28,12 @@ class Solution:
         n = len(dominoes)
         distRight = [n] * n
         distLeft = [n] * n
-        
+
         time = n
         for i in range(n):
-            if dominoes[i] == 'R':
+            if dominoes[i] == "R":
                 time = 0
-            elif dominoes[i] == 'L':
+            elif dominoes[i] == "L":
                 time = n
             elif time < n:
                 time += 1
@@ -41,9 +41,9 @@ class Solution:
 
         time = n
         for i in reversed(range(n)):
-            if dominoes[i] == 'L':
+            if dominoes[i] == "L":
                 time = 0
-            elif dominoes[i] == 'R':
+            elif dominoes[i] == "R":
                 time = n
             elif time < n:
                 time += 1
@@ -51,10 +51,9 @@ class Solution:
 
         res = []
         for distL, distR in zip(distLeft, distRight):
-            cur = '.'
+            cur = "."
             if distL != distR:
-                cur = 'R' if distR < distL else 'L'
+                cur = "R" if distR < distL else "L"
             res.append(cur)
-        
-        return ''.join(res)
-        
+
+        return "".join(res)

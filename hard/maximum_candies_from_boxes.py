@@ -1,7 +1,16 @@
 from collections import deque
 from queue import Queue
+
+
 class Solution:
-    def maxCandies(self, status: List[int], candies: List[int], keys: List[List[int]], containedBoxes: List[List[int]], initialBoxes: List[int]) -> int:
+    def maxCandies(
+        self,
+        status: List[int],
+        candies: List[int],
+        keys: List[List[int]],
+        containedBoxes: List[List[int]],
+        initialBoxes: List[int],
+    ) -> int:
         """
         Problem: Maximum Candies you can get from Boxes; leetcode #1298
         You have n boxes labeled from 0 to n - 1. You are given four arrays: status, candies, keys, and containedBoxes where:
@@ -15,7 +24,7 @@ class Solution:
 
         Return the maximum number of candies you can get following the rules above.
 
-        
+
 
         Example 1:
 
@@ -35,7 +44,7 @@ class Solution:
         Output: 6
         Explanation: You have initially box 0. Opening it you can find boxes 1,2,3,4 and 5 and their keys.
         The total number of candies will be 6.
-        
+
 
         Constraints:
 
@@ -76,12 +85,6 @@ class Solution:
                 waiting_list.add(curBox)
 
         return sum_candies
-        
-            
-
-
-
-
 
         # sum_candies = 0
         # available_boxes = Queue()
@@ -105,5 +108,3 @@ class Solution:
         #     if not opened:
         #         break
         # return sum_candies
-
-        

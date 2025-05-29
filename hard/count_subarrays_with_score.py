@@ -1,7 +1,7 @@
 class Solution:
     def countSubarrays(self, nums: List[int], k: int) -> int:
         """
-        Problem: Count Subarrays with score less than K; leetcode #2302 
+        Problem: Count Subarrays with score less than K; leetcode #2302
         The score of an array is defined as the product of its sum and its length.
 
         For example, the score of [1, 2, 3, 4, 5] is (1 + 2 + 3 + 4 + 5) * 5 = 75.
@@ -9,7 +9,7 @@ class Solution:
 
         A subarray is a contiguous sequence of elements within an array.
 
-        
+
 
         Example 1:
 
@@ -20,7 +20,7 @@ class Solution:
         - [2] with score 2 * 1 = 2.
         - [1] with score 1 * 1 = 1.
         - [4] with score 4 * 1 = 4.
-        - [3] with score 3 * 1 = 3. 
+        - [3] with score 3 * 1 = 3.
         - [5] with score 5 * 1 = 5.
         - [2,1] with score (2 + 1) * 2 = 6.
         Note that subarrays such as [1,4] and [4,3,5] are not considered because their scores are 10 and 36 respectively, while we need scores strictly less than 10.
@@ -32,14 +32,14 @@ class Solution:
         Every subarray except [1,1,1] has a score less than 5.
         [1,1,1] has a score (1 + 1 + 1) * 3 = 9, which is greater than 5.
         Thus, there are 5 subarrays having scores less than 5.
-        
+
 
         Constraints:
 
         1 <= nums.length <= 105
         1 <= nums[i] <= 105
         1 <= k <= 1015
-"""
+        """
         n = len(nums)
         numSubarrays = n * (n + 1) // 2
         l = 0
@@ -47,9 +47,8 @@ class Solution:
         for r in range(n):
             curSum += nums[r]
             while (r - l + 1) * curSum >= k:
-                numSubarrays -= (n - r)
+                numSubarrays -= n - r
                 curSum -= nums[l]
                 l += 1
 
         return numSubarrays
-        

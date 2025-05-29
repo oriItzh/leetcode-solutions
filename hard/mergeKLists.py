@@ -1,17 +1,16 @@
-
 from utils.ListNode import ListNode
 import heapq
 
 
 class Solution:
-    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]: # type: ignore
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:  # type: ignore
         """
         Problem: Merge k sorted Lists; leetcode #23
         You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.
 
         Merge all the linked-lists into one sorted linked-list and return it.
 
-        
+
 
         Example 1:
 
@@ -33,7 +32,7 @@ class Solution:
 
         Input: lists = [[]]
         Output: []
-        
+
 
         Constraints:
 
@@ -44,7 +43,7 @@ class Solution:
         lists[i] is sorted in ascending order.
         The sum of lists[i].length will not exceed 104.
         """
-        
+
         if not lists:
             return None
         heap = []

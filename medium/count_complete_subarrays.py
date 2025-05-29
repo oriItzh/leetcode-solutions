@@ -1,6 +1,7 @@
 from collections import defaultdict
 from typing import List
 
+
 class Solution:
     def countCompleteSubarrays(self, nums: List[int]) -> int:
         """
@@ -14,7 +15,7 @@ class Solution:
 
         A subarray is a contiguous non-empty part of an array.
 
-        
+
 
         Example 1:
 
@@ -26,7 +27,7 @@ class Solution:
         Input: nums = [5,5,5,5]
         Output: 10
         Explanation: The array consists only of the integer 5, so any subarray is complete. The number of subarrays that we can choose is 10.
-        
+
 
         Constraints:
 

@@ -1,6 +1,7 @@
 from collections import defaultdict, deque
 from typing import List
 
+
 class Solution:
     def largestPathValue(self, colors: str, edges: List[List[int]]) -> int:
         """
@@ -10,20 +11,21 @@ class Solution:
         - Use Kahn's algorithm for topological sorting.
         - For each node, maintain a count of the maximum number of each color along any path to that node.
         - If a cycle is detected (not all nodes are visited), return -1.
-        
+
         Time Complexity: O(n + m), where n = number of nodes, m = number of edges
         Space Complexity: O(n * 26) for DP table (26 colors)
         """
+
         def _color(idx):
             # Convert color character to an integer index (0-25)
-            return ord(colors[idx]) - ord('a')
+            return ord(colors[idx]) - ord("a")
 
         n = len(colors)
         adj = defaultdict(list)  # adjacency list for the graph
-        in_deg = [0] * n         # in-degree for each node
+        in_deg = [0] * n  # in-degree for each node
         dp = [[0] * 26 for _ in range(n)]  # dp[i][c]: max count of color c to node i
-        q = deque()              # queue for topological sort
-        visited = 0              # count of visited nodes
+        q = deque()  # queue for topological sort
+        visited = 0  # count of visited nodes
 
         # Build the graph and compute in-degrees
         for src, trgt in edges:
@@ -36,7 +38,7 @@ class Solution:
                 q.append(i)
             # Each node starts with its own color counted once
             dp[i][_color(i)] = 1
-        
+
         # Topological sort and DP propagation
         while q:
             cur = q.popleft()
@@ -55,25 +57,19 @@ class Solution:
         # If all nodes are visited, return the largest color value found
         # Otherwise, a cycle exists, return -1
         return max(max(row) for row in dp) if visited == n else -1
-    
+
         # Time: O(n + m), Space: O(n * 26)
-    
 
     # Example 1:
-
-
 
     # Input: colors = "abaca", edges = [[0,1],[0,2],[2,3],[3,4]]
     # Output: 3
     # Explanation: The path 0 -> 2 -> 3 -> 4 contains 3 nodes that are colored "a" (red in the above image).
     # Example 2:
 
-
-
     # Input: colors = "a", edges = [[0,0]]
     # Output: -1
     # Explanation: There is a cycle from 0 to 0.
-    
 
     # Constraints:
 

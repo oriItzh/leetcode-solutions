@@ -1,9 +1,12 @@
 from collections import defaultdict, deque
 from typing import List
 
+
 class Solution:
-    def maxTargetNodes(self, edges1: List[List[int]], edges2: List[List[int]], k: int) -> List[int]:
-        """ 
+    def maxTargetNodes(
+        self, edges1: List[List[int]], edges2: List[List[int]], k: int
+    ) -> List[int]:
+        """
         Problem: "Maximize the number of target Nodes after connecting Trees 1" ; leetcode #3372
 
         There exist two undirected trees with n and m nodes, with distinct labels in ranges [0, n - 1] and [0, m - 1], respectively.
@@ -43,12 +46,12 @@ class Solution:
                             q.append(nei)
                             visited.add(nei)
                 level += 1
-            return count        
+            return count
 
         # Number of nodes in each tree
         N, M = len(edges1) + 1, len(edges2) + 1
         # Build adjacency lists for both trees
-        adj1, adj2 = build_adj(edges1, N), build_adj(edges2, M)       
+        adj1, adj2 = build_adj(edges1, N), build_adj(edges2, M)
 
         # For each node in tree2, compute the max number of nodes reachable within (k-1) steps
         # This is because the connecting edge will use 1 step, so only (k-1) steps left in tree2
@@ -57,6 +60,7 @@ class Solution:
         # For each node in tree1, compute the number of nodes reachable within k steps in tree1,
         # plus the maximum possible nodes reachable in tree2 (from any node) within (k-1) steps
         return [_bfs_with_limit(src, 1, k) + max_reachable2 for src in range(N)]
+
 
 # Time Complexity Analysis:
 # Let n = number of nodes in tree1, m = number of nodes in tree2.
@@ -88,7 +92,6 @@ class Solution:
 
 # For every i, connect node i of the first tree with any node of the second tree.
 
- 
 
 # Constraints:
 

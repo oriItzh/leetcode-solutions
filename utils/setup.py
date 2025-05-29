@@ -36,6 +36,7 @@ python easy/two_sum.py
 MIT – feel free to use any code here.
 """
 
+
 def create_structure():
     os.makedirs(BASE_DIR, exist_ok=True)
     for folder in SUBFOLDERS:
@@ -46,6 +47,7 @@ def create_structure():
         f.write(README_CONTENT)
 
     print(f"LeetCode repo structure created at: ./{BASE_DIR}/")
+
 
 if __name__ == "__main__":
     create_structure()

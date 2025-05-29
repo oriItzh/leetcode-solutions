@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         """
@@ -21,7 +22,7 @@ class Solution:
 
         Input: nums = [3,3], target = 6
         Output: [0,1]
-        
+
 
         Constraints:
 
@@ -37,6 +38,7 @@ class Solution:
                 return [dict_nums[to_find], i]
             dict_nums[num] = i
         return []
+
 
 # Test case (only runs when script is executed directly)
 if __name__ == "__main__":

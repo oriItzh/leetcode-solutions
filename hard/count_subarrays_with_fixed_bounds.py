@@ -1,5 +1,3 @@
-
-
 class Solution:
     def countSubarrays(self, nums: List[int], minK: int, maxK: int) -> int:
         """
@@ -14,7 +12,7 @@ class Solution:
 
         A subarray is a contiguous part of an array.
 
-        
+
 
         Example 1:
 
@@ -26,13 +24,13 @@ class Solution:
         Input: nums = [1,1,1,1], minK = 1, maxK = 1
         Output: 10
         Explanation: Every subarray of nums is a fixed-bound subarray. There are 10 possible subarrays.
-        
+
 
         Constraints:
 
         2 <= nums.length <= 105
         1 <= nums[i], minK, maxK <= 106
-"""
+        """
         res = 0
         lastMin = lastMax = -1
         leftBound = -1
@@ -48,4 +46,3 @@ class Solution:
                 res += min(lastMin, lastMax) - leftBound
 
         return res
-

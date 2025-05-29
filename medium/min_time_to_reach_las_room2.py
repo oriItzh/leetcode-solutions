@@ -1,9 +1,10 @@
 import heapq
 from typing import List
 
+
 class Solution:
     """
-    Problem: 
+    Problem:
     There is a dungeon with n x m rooms arranged as a grid.
 
     You are given a 2D array moveTime of size n x m, where moveTime[i][j] represents the minimum time in seconds when you can start moving to that room. You start from the room (0, 0) at time t = 0 and can move to an adjacent room. Moving between adjacent rooms takes one second for one move and two seconds for the next, alternating between the two.
@@ -12,7 +13,7 @@ class Solution:
 
     Two rooms are adjacent if they share a common wall, either horizontally or vertically.
 
-    
+
 
     Example 1:
 
@@ -46,7 +47,7 @@ class Solution:
 
     Output: 4
 
-    
+
 
     Constraints:
 
@@ -54,15 +55,16 @@ class Solution:
     2 <= m == moveTime[i].length <= 750
     0 <= moveTime[i][j] <= 109
     """
+
     def minTimeToReach(self, moveTime: List[List[int]]) -> int:
         """
         Problem: Minimum Time to Reach Last Room (LeetCode Contest)
-        
+
         Approach: A* search algorithm with a custom heuristic
         - Use priority queue to explore paths with lowest estimated total time
         - Maintain a memoization table to avoid revisiting states with worse times
         - Use Manhattan distance-based heuristic to estimate remaining time
-        
+
         Time Complexity: O(nm * log(nm)) where n,m are grid dimensions
         Space Complexity: O(nm) for memo table and heap
         """

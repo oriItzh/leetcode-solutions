@@ -1,4 +1,3 @@
-
 def find_max_subarray_sum(nums: list[int]):
     """
     Find the maximum subarray sum using Kadane's algorithm.
@@ -9,13 +8,16 @@ def find_max_subarray_sum(nums: list[int]):
     Returns:
         int: Maximum subarray sum.
     """
-    max_sum = nums[0] if not nums else float('-inf') # Initialize to negative infinity to handle all negative numbers
-    current_sum = 0 # Start with the first element or 0 if the list is empty
+    max_sum = (
+        nums[0] if not nums else float("-inf")
+    )  # Initialize to negative infinity to handle all negative numbers
+    current_sum = 0  # Start with the first element or 0 if the list is empty
     for num in nums:
-        current_sum = max(current_sum + num, num) 
+        current_sum = max(current_sum + num, num)
         max_sum = max(max_sum, current_sum)
 
     return max_sum
+
 
 def find_max_subarray_sum_with_indices(nums: list[int]):
     """
@@ -27,8 +29,10 @@ def find_max_subarray_sum_with_indices(nums: list[int]):
     Returns:
         Tuple[int, int, int]: Maximum subarray sum, start index, end index.
     """
-    max_sum = float('-inf') # Initialize to negative infinity to handle all negative numbers
-    current_sum = 0 # Start with the first element or 0 if the list is empty
+    max_sum = float(
+        "-inf"
+    )  # Initialize to negative infinity to handle all negative numbers
+    current_sum = 0  # Start with the first element or 0 if the list is empty
     start = 0
     max_start = max_end = 0
     for end in range(len(nums)):

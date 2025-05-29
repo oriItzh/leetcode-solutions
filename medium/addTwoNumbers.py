@@ -2,7 +2,7 @@ from utils.ListNode import ListNode
 
 
 class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]: # type: ignore
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:  # type: ignore
         """
         Problem: Add Two Numbers ; leetcode #2
         You are given two non-empty linked lists representing two non-negative integers.
@@ -24,7 +24,7 @@ class Solution:
         """
         cur = resHead = ListNode()
         carry = 0
-        
+
         while l1 or l2 or carry:
             l1Val = 0 if not l1 else l1.val
             l2Val = 0 if not l2 else l2.val
@@ -39,9 +39,7 @@ class Solution:
                 l2 = l2.next
             cur = cur.next
 
-
         return resHead.next
-
 
         # def extractNum(head):
         #     if not head:
@@ -56,5 +54,3 @@ class Solution:
         #     sumLists //= 10
         #     cur = cur.next
         # return newHead
-
-        

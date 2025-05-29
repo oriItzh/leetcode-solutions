@@ -14,7 +14,7 @@ class Solution:
 
         Since the answer may be very large, return it modulo 109 + 7.
 
-        
+
 
         Example 1:
 
@@ -59,7 +59,7 @@ class Solution:
         String after the first transformation: "bcabcdlm"
         Final Length of the string: The string is "bcabcdlm", which has 8 characters.
 
-        
+
 
         Constraints:
 
@@ -70,7 +70,8 @@ class Solution:
         1 <= nums[i] <= 25
         """
 
-        MOD = 10 ** 9 + 7
+        MOD = 10**9 + 7
+
         # Initialize the matrix for the transformation
         def initialize_matrix():
             mat = [[0] * 26 for _ in range(26)]
@@ -107,7 +108,7 @@ class Solution:
         # Initialize frequency vector
         freq = [0] * 26
         for c in s:
-            freq[ord(c) - ord('a')] += 1
+            freq[ord(c) - ord("a")] += 1
 
         mat = initialize_matrix()
         mat_t = mat_pow(mat, t)
