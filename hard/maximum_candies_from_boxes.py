@@ -1,5 +1,5 @@
+from typing import List
 from collections import deque
-from queue import Queue
 
 
 class Solution:

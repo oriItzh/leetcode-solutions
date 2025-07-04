@@ -25,11 +25,7 @@ class GraphTraversal:
             if vertex not in visited:
                 visited.add(vertex)
                 traversal_order.append(vertex)
-                queue.extend(
-                    neighbor
-                    for neighbor in self.graph[vertex]
-                    if neighbor not in visited
-                )
+                queue.extend(neighbor for neighbor in self.graph[vertex] if neighbor not in visited)
 
         return traversal_order
 

@@ -1,11 +1,9 @@
-from collections import defaultdict, deque
+from collections import deque
 from typing import List
 
 
 class Solution:
-    def maxTargetNodes(
-        self, edges1: List[List[int]], edges2: List[List[int]], k: int
-    ) -> List[int]:
+    def maxTargetNodes(self, edges1: List[List[int]], edges2: List[List[int]], k: int) -> List[int]:
         """
         Problem: "Maximize the number of target Nodes after connecting Trees 1" ; leetcode #3372
 

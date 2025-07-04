@@ -18,10 +18,7 @@ class Solution:
         n = len(tops)
         res = -1
         for candidate in candidates:
-            if any(
-                bottom != candidate and top != candidate
-                for bottom, top in zip(tops, bottoms)
-            ):
+            if any(bottom != candidate and top != candidate for bottom, top in zip(tops, bottoms)):
                 continue
             swapsT = n - sum(1 for tile in tops if tile == candidate)
             swapsB = n - sum(1 for tile in bottoms if tile == candidate)

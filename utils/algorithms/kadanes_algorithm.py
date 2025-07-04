@@ -29,9 +29,7 @@ def find_max_subarray_sum_with_indices(nums: list[int]):
     Returns:
         Tuple[int, int, int]: Maximum subarray sum, start index, end index.
     """
-    max_sum = float(
-        "-inf"
-    )  # Initialize to negative infinity to handle all negative numbers
+    max_sum = float("-inf")  # Initialize to negative infinity to handle all negative numbers
     current_sum = 0  # Start with the first element or 0 if the list is empty
     start = 0
     max_start = max_end = 0

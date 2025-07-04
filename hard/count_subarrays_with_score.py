@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def countSubarrays(self, nums: List[int], k: int) -> int:
         """
@@ -42,13 +45,13 @@ class Solution:
         """
         n = len(nums)
         numSubarrays = n * (n + 1) // 2
-        l = 0
+        left = 0
         curSum = 0
-        for r in range(n):
-            curSum += nums[r]
-            while (r - l + 1) * curSum >= k:
-                numSubarrays -= n - r
-                curSum -= nums[l]
-                l += 1
+        for right in range(n):
+            curSum += nums[right]
+            while (right - left + 1) * curSum >= k:
+                numSubarrays -= n - right
+                curSum -= nums[left]
+                left += 1
 
         return numSubarrays

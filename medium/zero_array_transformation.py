@@ -18,9 +18,9 @@ class Solution:
         N = len(nums)
         max_ops = [0] * (N + 1)  # +1 to avoid index check
 
-        for l, r in queries:
-            max_ops[l] += 1
-            max_ops[r + 1] -= 1
+        for left, right in queries:
+            max_ops[left] += 1
+            max_ops[right + 1] -= 1
 
         # Apply prefix sum
         for i in range(1, N):
