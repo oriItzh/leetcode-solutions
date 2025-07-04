@@ -18,7 +18,7 @@ def fix_file(filepath):
     already_imported = set()
     for line in lines:
         if line.strip().startswith(IMPORT_LINE):
-            already_imported.update(map(str.strip, line[len(IMPORT_LINE):].split(",")))
+            already_imported.update(map(str.strip, line[len(IMPORT_LINE) :].split(",")))
 
     missing = used - already_imported
     if not missing:
